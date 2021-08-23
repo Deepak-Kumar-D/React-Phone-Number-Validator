@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: 0.25s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f0e3ca;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Main container */
+.main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+/* Header of the app */
+.header {
+  background-color: #1b1a17;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: #ff8303;
+  height: 7vh;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.header h3 {
+  font-weight: 500;
+}
+
+/* Form style */
+.main form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 1px 2px 8px #acacac;
+  border-radius: 5px;
+}
+
+.main form label {
+  color: #ff8303;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+}
+
+.main form input {
+  color: #ff8303;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: 1px solid #ff8303;
+  border-radius: 3px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #a35709;
+  transition: background-color 5000000s ease-in-out 0s;
+}
+
+.main form input[type="submit"] {
+  color: #ff8303;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid #ff8303;
+  width: 30%;
+  cursor: pointer;
+}
+
+.main form input[type="submit"]:hover {
   color: white;
+  background-color: #ff8303;
+  border-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Phone number profile section */
+.profile {
+  width: 40%;
+  margin-top: 2rem;
+  background-color: white;
+  box-shadow: 1px 2px 8px #acacac;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.profile div {
+  display: flex;
+  padding: 1rem;
+}
+
+.profile div h4 {
+  margin-right: 1rem;
+  color: #595959;
+}
+
+.profile div p {
+  color: #707070;
+  text-transform: capitalize;
+}
+
+hr {
+  margin: 0 1rem;
+  opacity: 0.3;
+}
+
+/* Footer */
+.footer {
+  background-color: #a35709;
+  margin-top: auto;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0e3ca;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 720px) {
+  .main form,
+  .profile {
+    width: 60%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 575px) {
+  .main form,
+  .profile {
+    width: 80%;
+    font-size: 90%;
+  }
+
+  .main form label,
+  .main form input,
+  .main form input[type="submit"] {
+    font-size: 90%;
+  }
+
+  .main form input[type="submit"] {
+    width: 100%;
+  }
+
+  .profile div {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .profile div p {
+    margin-top: 1rem;
   }
 }
